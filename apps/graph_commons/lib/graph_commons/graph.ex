@@ -1,4 +1,8 @@
 defmodule GraphCommons.Graph do
+  @moduledoc """
+  Defines the Graph Type
+  """
+
   @type graph_data :: String.t()
   @type graph_file :: String.t()
   @type graph_path :: String.t()
