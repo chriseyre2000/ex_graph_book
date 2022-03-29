@@ -11,4 +11,5 @@ defmodule GraphCommons do
   @typedoc "Type for testing file types"
   @type file_test :: :dir? | :regular? | :exists?
 
+  @priv_dir "#{:code.priv_dir(:graph_commons)}"
 end

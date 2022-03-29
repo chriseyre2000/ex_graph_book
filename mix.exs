@@ -35,7 +35,7 @@ defmodule ExGraphBook.MixProject do
 
   defp aliases do
     [
-      test_graph_commons: "cmd --app graph_commons mix test --color",
+      test_graph_commons: "cmd --app graph_commons mix test --color"
     ]
   end
 end
