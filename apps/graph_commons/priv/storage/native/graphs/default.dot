@@ -1,0 +1,5 @@
+strict digraph {
+    "a"
+    "b"
+    "a" -> "b" [label="EX"; weight=1]
+}

@@ -12,4 +12,8 @@ defmodule GraphCommons do
   @type file_test :: :dir? | :regular? | :exists?
 
   @priv_dir "#{:code.priv_dir(:graph_commons)}"
+
+  def storage_dir do
+    @priv_dir <> "/storage/"
+  end
 end

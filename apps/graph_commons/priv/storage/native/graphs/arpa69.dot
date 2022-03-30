@@ -1,0 +1,18 @@
+strict graph {
+    "SRI"
+    "UCLA"
+    "UCSB"
+    "UTAH"
+    "940"
+    "SIGMA7"
+    "360"
+    "PDP-10"
+    "SRI" -- "UCLA" [weight=1]
+    "SRI" -- "UCSB" [weight=1]
+    "SRI" -- "UTAH" [weight=1]
+    "SRI" -- "940" [weight=1]
+    "UCLA" -- "UCSB" [weight=1]
+    "UCLA" -- "SIGMA7" [weight=1]
+    "UCSB" -- "360" [weight=1]
+    "UTAH" -- "PDP-10" [weight=1]
+}
