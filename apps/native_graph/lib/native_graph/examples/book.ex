@@ -8,7 +8,37 @@ defmodule NativeGraph.Examples.Book do
     # book1
     bk1 =
       val.(%{
-        id: :adopting_elixir
+        id: :adopting_elixir,
+        iri: "urn:isbn:978-1-68050-252-7",
+        date: "2018-03-14",
+        format: "Paper",
+        title: "Adopting Elixir"
+      })
+
+    bk1_au1 =
+        val.(%{
+          id: :ben_marx,
+          iri: "https://twitter.com/bgmarx",
+          name: "Ben Marx"
+        })
+    bk1_au2 =
+        val.(%{
+          id: :jose_valim,
+          iri: "https://twitter.com/josevalim",
+          name: "Jose Valim"
+        })
+    bk1_au3 =
+        val.(%{
+          id: :bruce_tate,
+          iri: "https://twitter.com/redrapids",
+          name: "Bruce Tate"
+        })
+
+    bk1_pub =
+      val.(%{
+        id: :pragmatic,
+        iri: "https://pragmatic.com/",
+        name: "The Pragmatic Bookshelf"
       })
 
     # book2
@@ -32,7 +62,16 @@ defmodule NativeGraph.Examples.Book do
     # build graph
     g =
       Graph.new(type: :directed)
-      |> Graph.add_vertex("bk1", "book")
+      |> Graph.add_vertex(bk1, "book")
+      |> Graph.add_vertex(bk1_au1, "Author")
+      |> Graph.add_vertex(bk1_au2, "Author")
+      |> Graph.add_vertex(bk1_au3, "Author")
+      |> Graph.add_vertex(bk1_pub, "Publisher")
+      |> Graph.add_edge(bk1_pub, bk1, label: "BOOK")
+      |> Graph.add_edge(bk1, bk1_au1, label: "AUTHOR")
+      |> Graph.add_edge(bk1, bk1_au2, label: "AUTHOR")
+      |> Graph.add_edge(bk1, bk1_au3, label: "AUTHOR")
+      |> Graph.add_edge(bk1, bk1_pub, label: "PUBLISHER")
 
     g =
       if all_books? do
