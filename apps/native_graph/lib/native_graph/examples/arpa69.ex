@@ -41,5 +41,6 @@ defmodule NativeGraph.Examples.Arpa69 do
       |> Enum.reduce(g, fn %{v1: v1, v2: v2, label: label}, g ->
         Graph.add_edge(g, v2, v1, label: label)
       end)
+    g
   end
 end
