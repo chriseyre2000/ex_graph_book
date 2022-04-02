@@ -9,6 +9,9 @@
 # move said applications out of the umbrella.
 import Config
 
+config :bolt_sips, Bolt,
+  url: "bolt://localhost:7687",
+  basic_auth: [username: "neo4j", password: "neo4jtest"]
 # Sample configuration:
 #
 #     config :logger, :console,
