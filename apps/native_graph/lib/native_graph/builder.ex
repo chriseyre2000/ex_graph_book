@@ -1,5 +1,6 @@
 defmodule NativeGraph.Builder do
   require Integer
+
   def random_graph(limit) do
     for(n <- 1..limit, m <- (n + 1)..limit, do: do_evaluate(n, m))
     |> Enum.reject(&is_nil/1)

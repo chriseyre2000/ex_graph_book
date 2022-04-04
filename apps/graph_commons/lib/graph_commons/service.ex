@@ -15,4 +15,8 @@ defmodule GraphCommons.Service do
   @callback query_graph!(GraphCommons.Query.t()) :: any()
   @callback query_graph(GraphCommons.Query.t(), map()) :: any()
   @callback query_graph!(GraphCommons.Query.t(), map()) :: any()
+
+  defmodule GraphInfo do
+    defstruct ~w[type file num_nodes num_edges stats label]a
+  end
 end

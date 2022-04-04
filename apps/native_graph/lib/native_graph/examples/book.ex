@@ -16,23 +16,25 @@ defmodule NativeGraph.Examples.Book do
       })
 
     bk1_au1 =
-        val.(%{
-          id: :ben_marx,
-          iri: "https://twitter.com/bgmarx",
-          name: "Ben Marx"
-        })
+      val.(%{
+        id: :ben_marx,
+        iri: "https://twitter.com/bgmarx",
+        name: "Ben Marx"
+      })
+
     bk1_au2 =
-        val.(%{
-          id: :jose_valim,
-          iri: "https://twitter.com/josevalim",
-          name: "Jose Valim"
-        })
+      val.(%{
+        id: :jose_valim,
+        iri: "https://twitter.com/josevalim",
+        name: "Jose Valim"
+      })
+
     bk1_au3 =
-        val.(%{
-          id: :bruce_tate,
-          iri: "https://twitter.com/redrapids",
-          name: "Bruce Tate"
-        })
+      val.(%{
+        id: :bruce_tate,
+        iri: "https://twitter.com/redrapids",
+        name: "Bruce Tate"
+      })
 
     bk1_pub =
       val.(%{

@@ -18,7 +18,7 @@ defmodule PropertyGraph.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger],
+      extra_applications: [:logger, :hackney],
       mod: {PropertyGraph.Application, []}
     ]
   end
@@ -27,7 +27,8 @@ defmodule PropertyGraph.MixProject do
   defp deps do
     [
       {:bolt_sips, "~>2.0"},
-      {:hackney, "~> 1.0"}
+      {:hackney, "~> 1.0"},
+      {:graph_commons, in_umbrella: true},
     ]
   end
 end
