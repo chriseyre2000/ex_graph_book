@@ -2,7 +2,6 @@ defmodule PropertyGraph do
   @moduledoc """
   Documentation for `PropertyGraph`.
   """
-
   use GraphCommons.Graph, graph_type: :property, graph_module: __MODULE__
   use GraphCommons.Query, query_type: :property, query_module: __MODULE__
 

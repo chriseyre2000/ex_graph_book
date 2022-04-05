@@ -39,20 +39,16 @@ defmodule PropertyGraph.Service do
     }
   end
 
-  def query_graph(%GraphCommons.Query{} = query) do
-    query_graph(query, %{})
-  end
-
   # This is a guess at the implementation
-  def query_graph!(%GraphCommons.Query{} = query) do
+  def query_graph!(%GraphCommons.Query{} = query, param \\ %{} ) do
     :property = query.type
-    {:ok, response} = Bolt.Sips.query(Bolt.Sips.conn(), query.data)
+    {:ok, response} = Bolt.Sips.query(Bolt.Sips.conn(), query.data, param)
     parse_response(response, true)
   end
 
-  def query_graph(%GraphCommons.Query{} = query, params) do
+  def query_graph(%GraphCommons.Query{} = query, param \\ %{}) do
     :property = query.type
-    Bolt.Sips.query(Bolt.Sips.conn(), query.data, params)
+    Bolt.Sips.query(Bolt.Sips.conn(), query.data, param)
     |> case do
       {:ok, response} -> parse_response(response, false)
       {:error, error} -> {:error, error}

@@ -117,6 +117,7 @@ defmodule GraphCommons.Graph do
     graph_module = Keyword.get(opts, :graph_module)
 
     quote do
+      # require GraphCommons.Utils
       def graph_module, do: unquote(graph_module) |> GraphCommons.Utils.graph_service()
 
       ## Types
