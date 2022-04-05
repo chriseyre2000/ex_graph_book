@@ -1,0 +1,1 @@
+MATCH ()-[r]-() DISTINCT id(r)

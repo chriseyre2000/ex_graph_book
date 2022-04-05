@@ -1,0 +1,1 @@
+MATCH (n) MATCH ()-[r]-() RETURN DISTINCT n, r

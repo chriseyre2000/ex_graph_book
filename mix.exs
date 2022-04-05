@@ -30,7 +30,7 @@ defmodule ExGraphBook.MixProject do
   #
   # Run "mix help deps" for examples and options.
   defp deps do
-    []
+    [{:hackney, "~> 1.0"},]
   end
 
   defp aliases do
